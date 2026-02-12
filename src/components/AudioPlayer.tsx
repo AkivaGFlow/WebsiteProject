@@ -128,6 +128,20 @@ export function AudioPlayer({
     draggingRef.current = false;
   }, []);
 
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      const audio = audioRef.current;
+      if (!audio || duration === 0) return;
+      const step = duration * 0.05;
+      if (e.key === "ArrowRight") {
+        audio.currentTime = Math.min(duration, audio.currentTime + step);
+      } else if (e.key === "ArrowLeft") {
+        audio.currentTime = Math.max(0, audio.currentTime - step);
+      }
+    },
+    [duration]
+  );
+
   return (
     <div>
       <audio ref={audioRef} src={src} preload="metadata" />
@@ -171,7 +185,14 @@ export function AudioPlayer({
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
-            className="h-[12px] flex items-center cursor-pointer touch-none"
+            role="slider"
+            aria-label="Seek audio"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(progress)}
+            tabIndex={0}
+            onKeyDown={handleKeyDown}
+            className="h-[24px] flex items-center cursor-pointer touch-none"
           >
             <div className="h-[4px] w-full rounded-full bg-[#E2E4E9] overflow-hidden">
               <div
@@ -187,8 +208,9 @@ export function AudioPlayer({
             <div className="flex gap-[6px]">
               <button
                 type="button"
+                aria-label="Playback speed 1x"
                 onClick={() => toggleSpeed(1)}
-                className={`text-[12px] border rounded-full px-[8px] py-[2px] cursor-pointer bg-white ${
+                className={`text-[12px] border rounded-full min-h-[28px] min-w-[36px] px-[8px] cursor-pointer bg-white ${
                   speed === 1
                     ? "text-[#1A1A2E] border-[#1A1A2E] font-medium"
                     : "text-[#6B6B82] border-[#E2E4E9]"
@@ -198,8 +220,9 @@ export function AudioPlayer({
               </button>
               <button
                 type="button"
+                aria-label="Playback speed 1.25x"
                 onClick={() => toggleSpeed(1.25)}
-                className={`text-[12px] border rounded-full px-[8px] py-[2px] cursor-pointer bg-white ${
+                className={`text-[12px] border rounded-full min-h-[28px] min-w-[44px] px-[8px] cursor-pointer bg-white ${
                   speed === 1.25
                     ? "text-[#1A1A2E] border-[#1A1A2E] font-medium"
                     : "text-[#6B6B82] border-[#E2E4E9]"

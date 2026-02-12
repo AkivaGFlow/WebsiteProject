@@ -28,13 +28,13 @@ export function FinalCTA() {
           {/* TODO: Replace with calendar booking URL */}
           <a
             href="#demo"
-            className="w-full md:w-auto inline-flex items-center justify-center h-[48px] min-h-[48px] px-[32px] rounded-[6px] text-[16px] font-semibold bg-white text-[#1B6B4A] hover:bg-[#F0F4F2] cursor-pointer"
+            className="w-full md:w-auto inline-flex items-center justify-center h-[48px] min-h-[48px] px-[32px] rounded-[6px] text-[16px] font-semibold bg-white text-[#1B6B4A] hover:bg-[#F0F4F2] cursor-pointer focus-visible:outline-white"
           >
             Book a Demo
           </a>
           <a
             href="#patient-experience"
-            className="w-full md:w-auto inline-flex items-center justify-center h-[48px] min-h-[48px] px-[32px] rounded-[6px] text-[16px] font-semibold bg-transparent border border-white text-white hover:bg-[rgba(255,255,255,0.1)] cursor-pointer"
+            className="w-full md:w-auto inline-flex items-center justify-center h-[48px] min-h-[48px] px-[32px] rounded-[6px] text-[16px] font-semibold bg-transparent border border-white text-white hover:bg-[rgba(255,255,255,0.1)] cursor-pointer focus-visible:outline-white"
           >
             Hear a Sample Call
           </a>

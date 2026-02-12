@@ -99,7 +99,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="text-[14px] text-[#6B6B82] text-center mt-[24px] md:mt-[16px]">
+        <p className="text-[14px] text-[#8888A0] text-center mt-[24px] md:mt-[16px]">
           &copy; 2026 FlowHealth. All rights reserved. &middot; Privacy Policy
         </p>
       </div>
