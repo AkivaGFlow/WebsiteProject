@@ -5,6 +5,7 @@ import { HandlesTransfers } from "@/components/sections/HandlesTransfers";
 import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { WhoItsFor } from "@/components/sections/WhoItsFor";
+import { PatientExperience } from "@/components/sections/PatientExperience";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ProblemAgitation />
       <HowItWorks />
       <WhoItsFor />
+      <PatientExperience />
     </main>
   );
 }
