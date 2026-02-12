@@ -9,6 +9,7 @@ import { PatientExperience } from "@/components/sections/PatientExperience";
 import { ProofSection } from "@/components/sections/ProofSection";
 import { Pricing } from "@/components/sections/Pricing";
 import { FAQ } from "@/components/sections/FAQ";
+import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <ProofSection />
       <Pricing />
       <FAQ />
+      <FinalCTA />
     </main>
   );
 }
