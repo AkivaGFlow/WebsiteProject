@@ -7,6 +7,11 @@
   --font-sans: var(--font-inter), "Inter", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 *,
 *::before,
 *::after {
@@ -21,4 +26,14 @@ body {
   font-family: var(--font-inter), "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid #1B6B4A;
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }
