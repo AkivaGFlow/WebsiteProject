@@ -4,6 +4,7 @@ import { ValueProps } from "@/components/sections/ValueProps";
 import { HandlesTransfers } from "@/components/sections/HandlesTransfers";
 import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
 import { HowItWorks } from "@/components/sections/HowItWorks";
+import { WhoItsFor } from "@/components/sections/WhoItsFor";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HandlesTransfers />
       <ProblemAgitation />
       <HowItWorks />
+      <WhoItsFor />
     </main>
   );
 }
