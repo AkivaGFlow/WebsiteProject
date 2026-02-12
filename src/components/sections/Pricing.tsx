@@ -101,7 +101,8 @@ export function Pricing() {
 
         {/* CTA */}
         <div className="mt-[32px] text-center">
-          <Button variant="primary">Book a Demo</Button>
+          {/* TODO: Replace with calendar booking URL */}
+          <Button variant="primary" href="#demo">Book a Demo</Button>
           <p className="text-[14px] text-[#6B6B82] mt-[12px]">
             15 minutes &middot; practice-specific demo &middot; you test it
             yourself

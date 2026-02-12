@@ -24,10 +24,19 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col md:flex-row gap-[12px] md:gap-[16px]">
-            <Button variant="primary" className="w-full md:w-auto">
+            <Button
+              variant="primary"
+              className="w-full md:w-auto"
+              href="#patient-experience"
+            >
               Hear a real call (60 sec)
             </Button>
-            <Button variant="secondary" className="w-full md:w-auto">
+            {/* TODO: Replace with calendar booking URL */}
+            <Button
+              variant="secondary"
+              className="w-full md:w-auto"
+              href="#demo"
+            >
               Book a demo
             </Button>
           </div>

@@ -176,7 +176,8 @@ export function HowItWorks() {
 
       {/* CTA */}
       <div className="mt-[48px]">
-        <Button variant="primary">
+        {/* TODO: Replace with calendar booking URL */}
+        <Button variant="primary" href="#demo">
           Book a demo to hear your practice&apos;s version
         </Button>
         <p className="text-[14px] text-[#6B6B82] mt-[12px]">

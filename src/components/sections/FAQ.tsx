@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 interface FAQItem {
   question: string;
@@ -122,10 +123,7 @@ function AccordionItem({
   const handleProofClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
       e.preventDefault();
-      const el = document.querySelector(href);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+      scrollToSection(href.replace("#", ""));
     },
     []
   );

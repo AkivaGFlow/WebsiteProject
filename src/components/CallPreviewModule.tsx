@@ -73,7 +73,7 @@ export function CallPreviewModule() {
         </div>
 
         <a
-          href="#transcript"
+          href="#patient-experience"
           className="inline-block mt-[12px] text-[14px] text-[#1B6B4A] hover:underline"
         >
           View full transcript

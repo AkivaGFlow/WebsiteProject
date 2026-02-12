@@ -25,8 +25,9 @@ export function FinalCTA() {
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-[16px] mt-[32px]">
+          {/* TODO: Replace with calendar booking URL */}
           <a
-            href="#book-demo"
+            href="#demo"
             className="w-full md:w-auto inline-flex items-center justify-center h-[48px] min-h-[48px] px-[32px] rounded-[6px] text-[16px] font-semibold bg-white text-[#1B6B4A] hover:bg-[#F0F4F2] cursor-pointer"
           >
             Book a Demo

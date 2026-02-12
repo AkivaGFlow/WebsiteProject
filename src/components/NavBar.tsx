@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/Button";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 export function NavBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,22 +29,35 @@ export function NavBar() {
         <div className="flex items-center gap-[24px]">
           <a
             href="#pricing"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("pricing");
+            }}
             className="hidden md:inline-block text-[14px] font-medium text-[#4A4A68]"
           >
             Pricing
           </a>
 
           <div className="hidden md:flex items-center gap-[12px]">
-            <Button variant="primary" size="sm">
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => scrollToSection("patient-experience")}
+            >
               Hear a Sample Call
             </Button>
-            <Button variant="secondary" size="sm">
+            {/* TODO: Replace with calendar booking URL */}
+            <Button variant="secondary" size="sm" href="#demo">
               Book a Demo
             </Button>
           </div>
 
           <div className="md:hidden">
-            <Button variant="primary" size="xs">
+            <Button
+              variant="primary"
+              size="xs"
+              onClick={() => scrollToSection("patient-experience")}
+            >
               Hear a Call
             </Button>
           </div>

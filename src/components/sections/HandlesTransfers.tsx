@@ -216,7 +216,7 @@ export function HandlesTransfers() {
                   </td>
                   <td className="py-[12px] text-right">
                     <a
-                      href="#transcript"
+                      href="#patient-experience"
                       className="text-[14px] text-[#1B6B4A] hover:underline"
                     >
                       View transcript
@@ -251,7 +251,7 @@ export function HandlesTransfers() {
                 {row.intent}
               </p>
               <a
-                href="#transcript"
+                href="#patient-experience"
                 className="text-[14px] text-[#1B6B4A] hover:underline"
               >
                 View transcript
