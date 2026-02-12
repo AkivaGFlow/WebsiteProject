@@ -1,5 +1,6 @@
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Button } from "@/components/ui/Button";
+import { CallPreviewModule } from "@/components/CallPreviewModule";
 
 export function Hero() {
   return (
@@ -31,15 +32,20 @@ export function Hero() {
             </Button>
           </div>
 
+          {/* Call preview — mobile only, between buttons and qualifier */}
+          <div className="mt-[32px] md:hidden">
+            <CallPreviewModule />
+          </div>
+
           <p className="text-[14px] text-[#6B6B82] leading-[1.5] mt-[16px]">
             Built for 5–20 physician specialty practices with dedicated
             scheduling teams. Live in ~4 weeks.
           </p>
         </div>
 
-        {/* Right column — 45% */}
-        <div className="md:w-[45%] min-h-[400px] border-[2px] border-dashed border-[#E2E4E9] rounded-[8px] flex items-center justify-center text-[14px] text-[#6B6B82]">
-          Call Experience Preview — built in next step
+        {/* Right column — 45%, desktop only */}
+        <div className="hidden md:block md:w-[45%]">
+          <CallPreviewModule />
         </div>
       </div>
     </SectionWrapper>
