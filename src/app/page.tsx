@@ -6,6 +6,7 @@ import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { WhoItsFor } from "@/components/sections/WhoItsFor";
 import { PatientExperience } from "@/components/sections/PatientExperience";
+import { ProofSection } from "@/components/sections/ProofSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <HowItWorks />
       <WhoItsFor />
       <PatientExperience />
+      <ProofSection />
     </main>
   );
 }
