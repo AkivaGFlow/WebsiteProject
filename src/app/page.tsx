@@ -8,6 +8,7 @@ import { WhoItsFor } from "@/components/sections/WhoItsFor";
 import { PatientExperience } from "@/components/sections/PatientExperience";
 import { ProofSection } from "@/components/sections/ProofSection";
 import { Pricing } from "@/components/sections/Pricing";
+import { FAQ } from "@/components/sections/FAQ";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <PatientExperience />
       <ProofSection />
       <Pricing />
+      <FAQ />
     </main>
   );
 }
