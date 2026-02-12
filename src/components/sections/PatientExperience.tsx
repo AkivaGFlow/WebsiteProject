@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { AudioPlayer } from "@/components/AudioPlayer";
 
 const transcriptLines = [
   {
@@ -97,6 +98,12 @@ function TranscriptModule() {
 }
 
 export function PatientExperience() {
+  const [listenComplete, setListenComplete] = useState(false);
+
+  const handleProgress = useCallback(() => {
+    setListenComplete(true);
+  }, []);
+
   return (
     <SectionWrapper
       background="white"
@@ -108,7 +115,10 @@ export function PatientExperience() {
       <div className="flex flex-col md:flex-row gap-[48px]">
         {/* Right column — Audio module (mobile first) */}
         <div className="md:hidden">
-          <AudioTranscriptModule />
+          <AudioTranscriptModule
+            onProgress={handleProgress}
+            listenComplete={listenComplete}
+          />
         </div>
 
         {/* Left column — Narrative */}
@@ -138,7 +148,10 @@ export function PatientExperience() {
 
         {/* Right column — Audio module (desktop) */}
         <div className="hidden md:block md:w-[55%]">
-          <AudioTranscriptModule />
+          <AudioTranscriptModule
+            onProgress={handleProgress}
+            listenComplete={listenComplete}
+          />
         </div>
       </div>
 
@@ -154,7 +167,13 @@ export function PatientExperience() {
   );
 }
 
-function AudioTranscriptModule() {
+function AudioTranscriptModule({
+  onProgress,
+  listenComplete,
+}: {
+  onProgress: (status: "complete") => void;
+  listenComplete: boolean;
+}) {
   return (
     <div className="bg-white border border-[#E2E4E9] rounded-[8px] p-[32px]">
       {/* Audio player */}
@@ -162,41 +181,21 @@ function AudioTranscriptModule() {
         Hear a real 60-second call
       </p>
 
-      <div className="flex items-center gap-[12px]">
-        {/* Play button */}
-        <button
-          type="button"
-          aria-label="Play sample call"
-          className="flex-shrink-0 w-[48px] h-[48px] min-h-[48px] rounded-full bg-[#1B6B4A] flex items-center justify-center cursor-pointer"
-        >
-          <svg
-            width="18"
-            height="20"
-            viewBox="0 0 18 20"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path d="M0 0L18 10L0 20V0Z" fill="white" />
-          </svg>
-        </button>
+      <AudioPlayer onProgress={onProgress} />
 
-        {/* Progress bar + time */}
-        <div className="flex-1 flex flex-col gap-[6px]">
-          <div className="h-[4px] rounded-full bg-[#E2E4E9] overflow-hidden">
-            <div className="h-full w-0 rounded-full bg-[#1B6B4A]" />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-[14px] text-[#6B6B82]">0:00 / 0:54</span>
-            <div className="flex gap-[6px]">
-              <span className="text-[12px] text-[#4A4A68] border border-[#E2E4E9] rounded-full px-[8px] py-[2px] font-medium bg-white">
-                1x
-              </span>
-              <span className="text-[12px] text-[#6B6B82] border border-[#E2E4E9] rounded-full px-[8px] py-[2px] bg-white">
-                1.25x
-              </span>
-            </div>
-          </div>
-        </div>
+      {/* Completion CTA */}
+      <div
+        className={`overflow-hidden transition-opacity duration-500 ${
+          listenComplete ? "opacity-100 mt-[12px]" : "opacity-0 h-0"
+        }`}
+      >
+        {/* TODO: Replace with calendar booking URL */}
+        <a
+          href="#demo"
+          className="text-[14px] font-medium text-[#1B6B4A] hover:underline"
+        >
+          Want to hear one built for your practice? &rarr; Book a Demo
+        </a>
       </div>
 
       {/* Transcript */}

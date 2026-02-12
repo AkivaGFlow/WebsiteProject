@@ -1,3 +1,5 @@
+import { AudioPlayer } from "@/components/AudioPlayer";
+
 export function CallPreviewModule() {
   return (
     <div className="bg-white border border-[#E2E4E9] rounded-[8px] p-[32px] shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
@@ -6,32 +8,9 @@ export function CallPreviewModule() {
         Hear what patients hear
       </p>
 
-      {/* Audio player placeholder */}
-      <div className="flex items-center gap-[12px] mb-[24px]">
-        {/* Play button */}
-        <button
-          type="button"
-          aria-label="Play sample call"
-          className="flex-shrink-0 w-[48px] h-[48px] min-h-[48px] rounded-full bg-[#1B6B4A] flex items-center justify-center cursor-pointer"
-        >
-          <svg
-            width="18"
-            height="20"
-            viewBox="0 0 18 20"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path d="M0 0L18 10L0 20V0Z" fill="white" />
-          </svg>
-        </button>
-
-        {/* Progress bar + time */}
-        <div className="flex-1 flex flex-col gap-[6px]">
-          <div className="h-[4px] rounded-full bg-[#E2E4E9] overflow-hidden">
-            <div className="h-full w-0 rounded-full bg-[#1B6B4A]" />
-          </div>
-          <span className="text-[14px] text-[#6B6B82]">0:00 / 0:54</span>
-        </div>
+      {/* Audio player */}
+      <div className="mb-[24px]">
+        <AudioPlayer />
       </div>
 
       {/* Transcript preview */}
