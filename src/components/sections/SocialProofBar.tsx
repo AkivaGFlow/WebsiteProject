@@ -14,7 +14,7 @@ export function SocialProofBar() {
 
           {/* Divider */}
           <div
-            className="hidden md:block w-[1px] h-[20px] bg-[#E2E4E9] mx-[24px]"
+            className="hidden md:block w-[1px] h-[20px] shrink-0 bg-[#E2E4E9] mx-[24px]"
             aria-hidden="true"
           />
 
@@ -28,7 +28,7 @@ export function SocialProofBar() {
 
           {/* Divider */}
           <div
-            className="hidden md:block w-[1px] h-[20px] bg-[#E2E4E9] mx-[24px]"
+            className="hidden md:block w-[1px] h-[20px] shrink-0 bg-[#E2E4E9] mx-[24px]"
             aria-hidden="true"
           />
 

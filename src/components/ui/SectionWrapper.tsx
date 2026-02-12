@@ -18,10 +18,13 @@ export function SectionWrapper({
   className = "",
   id,
 }: SectionWrapperProps) {
+  const hasCustomPadding = /p[tby]-/.test(className);
+  const padding = hasCustomPadding ? "" : "py-[56px] md:py-[80px]";
+
   return (
     <section
       id={id}
-      className={`py-[56px] md:py-[80px] ${bgMap[background]} ${className}`}
+      className={`${padding} ${bgMap[background]} ${className}`}
     >
       <div className="mx-auto max-w-[1200px] px-[24px]">{children}</div>
     </section>
