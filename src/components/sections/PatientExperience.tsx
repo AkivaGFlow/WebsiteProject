@@ -101,7 +101,7 @@ export function PatientExperience() {
     <SectionWrapper
       background="white"
       id="patient-experience"
-      className="pt-[96px] pb-[96px] md:pt-[96px] md:pb-[96px]"
+      className="pt-[64px] pb-[64px] md:pt-[96px] md:pb-[96px]"
     >
       <SectionHeader title="What patients actually hear" />
 
