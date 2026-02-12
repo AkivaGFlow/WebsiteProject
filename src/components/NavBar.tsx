@@ -6,6 +6,7 @@ import { scrollToSection } from "@/lib/scrollToSection";
 
 export function NavBar() {
   const [scrolled, setScrolled] = useState(false);
+  const [pricingInView, setPricingInView] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
@@ -13,6 +14,18 @@ export function NavBar() {
     }
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const section = document.getElementById("pricing");
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setPricingInView(entry.isIntersecting),
+      { rootMargin: "-80px 0px 0px 0px", threshold: 0 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -33,7 +46,11 @@ export function NavBar() {
               e.preventDefault();
               scrollToSection("pricing");
             }}
-            className="hidden md:inline-block text-[14px] font-medium text-[#4A4A68]"
+            className={`hidden md:inline-block text-[14px] font-medium ${
+              pricingInView
+                ? "text-[#1A1A2E] underline underline-offset-4"
+                : "text-[#4A4A68]"
+            }`}
           >
             Pricing
           </a>
