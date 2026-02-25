@@ -82,9 +82,9 @@ export function Footer() {
       <div className="mx-auto max-w-[1200px] px-[24px]">
         <div className="flex flex-col items-center gap-[12px] md:flex-row md:justify-between md:items-center">
           {/* Wordmark */}
-          <span className="text-[16px] font-semibold text-white">
+          <a href="/" className="text-[16px] font-semibold text-white hover:text-white">
             FlowHealth
-          </span>
+          </a>
 
           {/* Contact */}
           <p className="text-[14px] text-[#8888A0] text-center">

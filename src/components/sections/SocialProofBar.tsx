@@ -7,20 +7,7 @@ export function SocialProofBar() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-[12px] md:gap-0">
           {/* Item 1 */}
           <p className="text-[15px] font-medium text-[#4A4A68] text-center">
-            <span className="font-semibold">12,400+</span> patient calls
-            handled since{" "}
-            <span className="font-semibold">October 2025</span>
-          </p>
-
-          {/* Divider */}
-          <div
-            className="hidden md:block w-[1px] h-[20px] bg-[#E2E4E9] mx-[24px]"
-            aria-hidden="true"
-          />
-
-          {/* Item 2 */}
-          <p className="text-[15px] font-medium text-[#4A4A68] text-center">
-            Schedules directly inside{" "}
+            Integrated with:{" "}
             <span className="font-semibold">
               athenahealth, Nextech, Azalea Health, DrChrono
             </span>
